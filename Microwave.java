@@ -179,7 +179,7 @@ final class Microwave {
             // Prints the exception messages
             System.err.print(exception);
         } catch (IOException | NumberFormatException exception) {
-            // Ouputs error message
+            // Outputs error message
             System.out.println("Please enter a correct input.");
         }
 
