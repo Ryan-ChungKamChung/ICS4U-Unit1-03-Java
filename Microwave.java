@@ -144,10 +144,12 @@ final class Microwave {
                 case ONE_ITEM:
                     break;
                 case TWO_ITEMS:
-                    totalSecondsToCook = totalSecondsToCook * TWO_ITEM_MULTIPLIER;
+                    totalSecondsToCook =
+                        totalSecondsToCook * TWO_ITEM_MULTIPLIER;
                     break;
                 case THREE_ITEMS:
-                    totalSecondsToCook = totalSecondsToCook * THREE_ITEM_MULTIPLIER;
+                    totalSecondsToCook =
+                        totalSecondsToCook * THREE_ITEM_MULTIPLIER;
                     break;
                 default:
                     throw new IncorrectQuantityException();
