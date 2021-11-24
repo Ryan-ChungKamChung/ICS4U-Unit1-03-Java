@@ -108,16 +108,20 @@ final class Microwave {
         final double secondsToCook;
 
         try {
-
+            // User prompt
             System.out.print("What food item would you like to heat up?"
                     + "(soup, sub or pizza): ");
 
+            // Gathers and parses input to a String
             foodItemInput = new BufferedReader(
                     new InputStreamReader(System.in)
             ).readLine();
 
+            // Lowercase version of foodItemInput in case of typos
             foodItemInputLowercase = foodItemInput.toLowerCase();
 
+            // Checks what the user inputted and decides the amount of time
+            // that will be needed for one item
             switch (foodItemInputLowercase) {
                 case "soup":
                     totalSecondsToCook = SOUP_HEATING_TIME;
@@ -132,14 +136,19 @@ final class Microwave {
                     throw new FoodItemNotFoundException();
             }
 
+            // User prompt
             System.out.print("How many items would you like to heat up? ");
 
+            // Gathers and parses input to a String
             quantityInputString = new BufferedReader(
                 new InputStreamReader(System.in)
             ).readLine();
 
+            // Parses String version of the input as an Int
             quantityInput = Integer.parseInt(quantityInputString);
 
+            // Checks what the user inputted and decided the time multiplier
+            // for the cooking time based on their input (1-3)
             switch (quantityInput) {
                 case ONE_ITEM:
                     break;
@@ -155,15 +164,20 @@ final class Microwave {
                     throw new IncorrectQuantityException();
             }
 
+            // Calculates the amount of time in minutes and seconds needed to
+            // cook the food items
             minutesToCook = Math.floor(totalSecondsToCook / SECS_IN_MIN);
             secondsToCook = totalSecondsToCook % SECS_IN_MIN;
 
+            // Outputs the calculations in a human-readable form
             System.out.println("It would take "
                     + String.format("%.0f", minutesToCook) + " minutes and "
                     + String.format("%.01f", secondsToCook) + " seconds to cook.");
         } catch (FoodItemNotFoundException | IncorrectQuantityException exception) {
+            // Prints the exception messages
             System.err.print(exception);
         } catch (IOException | NumberFormatException exception) {
+            // Ouputs error message
             System.out.println("Please enter a correct input.");
         }
 
