@@ -172,8 +172,10 @@ final class Microwave {
             // Outputs the calculations in a human-readable form
             System.out.println("It would take "
                     + String.format("%.0f", minutesToCook) + " minutes and "
-                    + String.format("%.01f", secondsToCook) + " seconds to cook.");
-        } catch (FoodItemNotFoundException | IncorrectQuantityException exception) {
+                    + String.format("%.01f", secondsToCook)
+                    + " seconds to cook.");
+        } catch (FoodItemNotFoundException
+                | IncorrectQuantityException exception) {
             // Prints the exception messages
             System.err.print(exception);
         } catch (IOException | NumberFormatException exception) {
