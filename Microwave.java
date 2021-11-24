@@ -19,20 +19,20 @@ final class Microwave {
     // Public Constant Declarations
     /**
      * This constant represents the time it would take to heat up a sub inside
-     * of the microwave.
+     * of the microwave in seconds.
      */
     public static final int SUB_HEATING_TIME = 60;
 
     /**
      * This constant represents the time it would take to heat up a soup inside
-     * of the microwave.
+     * of the microwave in seconds.
      */
 
     public static final int SOUP_HEATING_TIME = 105;
 
     /**
      * This constant represents the time it would take to heat up a pizza inside
-     * of the microwave.
+     * of the microwave in seconds.
      */
     public static final int PIZZA_HEATING_TIME = 45;
 
